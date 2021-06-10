@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.parteSuperior{
+    width: 120em;
+    height: 8.5625em;
+    background-color: #1BE0B6;
+    display: flex;
+    align-items: center;
+}
+
+.imgLogo{
+    width: 5.4375em;
+    height: 5.4375em;
+    margin-left: 0.9375em;
+}
+
+.imgTexto{
+    width: 17.1875em;
+    height: 3em;
+    margin-left: 0.9375em;
+}
+
+.medico{
+    width: 120em;
+    height: 54em;
+    background-image: url(../../Imagens/vaccine.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blocoDescricao{
+    width: 31.25em;
+    height: 18.65125em;
+    display: flex;
+    justify-content: center;
+}
+
+.form{
+    background-color: white;
+    padding: 2.8em;
+}
+
+.textoDaDescricao{
+    font-size: 1.125em;
+}
+
+.input{
+    width: 28.6875em;
+    height: 6.25em;
+}
+
+.posicaoDescricao{
+    display: flex;
+    justify-content: center;
+}
+
+.textoDescricao{
+    font-size: 1.5em;
+    display: flex;
+    align-items: flex-end;
+}
+
+.posicaoBotao{
+    display: flex;
+    justify-content: center;
+}
+
+.botao{
+    width: 17.125em;
+    height: 2.8125em;
+    background-color: #3582FF;
+    color: white; 
+}

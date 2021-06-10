@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.parteSuperior{
+    width: 120em;
+    height: 8.5625em;
+    background-color: #1BE0B6;
+    display: flex;
+    align-items: center;
+}
+
+.imgLogo{
+    width: 5.4375em;
+    height: 5.4375em;
+    margin-left: 0.9375em;
+}
+
+.imgTexto{
+    width: 17.1875em;
+    height: 3em;
+    margin-left: 0.9375em;
+}
+
+.imgMedico{
+    width: 120em;
+    height: 55.4375em;
+}
+
+.medico{
+    width: 120em;
+    height: 54em;
+    background-image: url(../../Imagens/doctor.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blocoLogin{
+    width: 20.12em;
+    height: 22.630625em;
+}
+
+.form{
+    background-color: white;
+    padding: 2.8em;
+}
+
+.textoDoLogin{
+    font-size: 1.125em;
+}
+
+.input{
+    width: 17.125em;
+    height: 2.8125em;
+}
+
+.posicaoLogin{
+    display: flex;
+    justify-content: center;
+}
+
+.textoLogin{
+    font-size: 2.25em;
+    display: flex;
+    align-items: flex-end;
+}
+
+.posicaoSenha{
+    display: flex;
+    justify-content: space-between;
+}
+
+.botao{
+    width: 17.125em;
+    height: 2.8125em;
+    background-color: #3582FF;
+    color: white;
+}
