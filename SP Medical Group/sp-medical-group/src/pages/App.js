@@ -26,11 +26,7 @@ export default function App() {
         // Define a URL e o corpo da requisição
         axios.post('http://localhost:5000/api/Login', {
             email : email,
-            senha : senha},{
-              headers : {
-                'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
-            }
-        })
+            senha : senha})
 
         // Verifica o retorno da requisição
         .then(resposta => {
@@ -60,6 +56,16 @@ export default function App() {
                 if (parseJwt().role === '1') {
                     this.props.history.push('/cadastrar');
                     console.log('estou logado: ' + usuarioAutenticado());
+                }
+
+                else if(parseJwt().role === '2'){
+                  this.props.history.push('/listagem');
+                  console.log('estou logado: ' + usuarioAutenticado());
+                }
+
+                else if(parseJwt().role === '3'){
+                  this.props.history.push('/Listagem');
+                  console.log('estou logado: ' + usuarioAutenticado());
                 }
 
                 // Se não for, redireciona para a página home
@@ -99,7 +105,7 @@ export default function App() {
       </div>
       <div>
           <section>
-            <div className="medico">
+            <div className="medicoLogin">
               <div className="blocoLogin">
                 <form className="form" onSubmit={efetuaLogin}>
                   <div className="posicaoLogin">
@@ -109,7 +115,7 @@ export default function App() {
                   <br/>
                   <div>
                     <p className="textoDoLogin">Email</p>
-                    <input className="input" type="text" id="login__email" name="email" value={email} onChange={atualizaStateCampoEmail}/>
+                    <input className="inputLogin" type="text" id="login__email" name="email" value={email} onChange={atualizaStateCampoEmail}/>
                   </div>
                   <br/>
                   <div>
@@ -117,7 +123,7 @@ export default function App() {
                       <p className="textoDoLogin">Senha</p>
                       <Link to="/" className="textoDoLogin">Esqueceu?</Link>
                     </div>
-                    <input className="input" type="password" id="login__password" name="senha" value={senha} onChange={atualizaStateCampoSenha}/>
+                    <input className="inputLogin" type="password" id="login__password" name="senha" value={senha} onChange={atualizaStateCampoSenha}/>
                   </div>
                   <p style={{ color : 'red', textAlign : 'center'}}>{erroMensagem}</p>
                   {

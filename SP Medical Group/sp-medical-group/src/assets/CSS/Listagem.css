@@ -28,10 +28,10 @@
     height: 55.4375em;
 }
 
-.medico{
+.medicoListagem{
     width: 120em;
     height: 54em;
-    background-image: url(../../Imagens/doctor2.png);
+    background-image: url(../Imagens/doctor2.png);
     display: flex;
     justify-content: center;
     align-items: center;

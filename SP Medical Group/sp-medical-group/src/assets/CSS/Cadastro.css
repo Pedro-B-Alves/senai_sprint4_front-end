@@ -28,10 +28,10 @@
     height: 55.4375em;
 }
 
-.medico{
+.medicoCadastro{
     width: 120em;
     height: 54em;
-    background-image: url(../../Imagens/nurse.png);
+    background-image: url(../Imagens/nurse.png);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,7 +51,7 @@
     font-size: 1.125em;
 }
 
-.input{
+.inputCadastro{
     width: 17.125em;
     height: 2.8125em;
 }

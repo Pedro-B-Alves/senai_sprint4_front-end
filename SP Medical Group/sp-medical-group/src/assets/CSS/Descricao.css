@@ -23,10 +23,10 @@
     margin-left: 0.9375em;
 }
 
-.medico{
+.medicoDescricao{
     width: 120em;
     height: 54em;
-    background-image: url(../../Imagens/vaccine.png);
+    background-image: url(../Imagens/vaccine.png);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,7 +34,7 @@
 
 .blocoDescricao{
     width: 31.25em;
-    height: 18.65125em;
+    height: 25.625em;
     display: flex;
     justify-content: center;
 }
@@ -48,7 +48,7 @@
     font-size: 1.125em;
 }
 
-.input{
+.inputDescricao{
     width: 28.6875em;
     height: 6.25em;
 }

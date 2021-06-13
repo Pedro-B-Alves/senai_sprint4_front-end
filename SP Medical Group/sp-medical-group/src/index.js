@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import "./assets/CSS/Login.css";
 import App from './pages/App';
+import Cadastro from './pages/Cadastro'
+import Listagem from './pages/Listagem';
+import Descricao from './pages/Descricao';
 import reportWebVitals from './reportWebVitals';
 
 const routing = (
@@ -10,6 +13,9 @@ const routing = (
     <div>
         <Switch>
           <Route exact path="/" component={App}/>
+          <Route path="/cadastro" component={Cadastro}/>
+          <Route path="/listagem" component={Listagem}/>
+          <Route path="/descricao" component={Descricao}/>
         </Switch>
     </div>
   </Router>
