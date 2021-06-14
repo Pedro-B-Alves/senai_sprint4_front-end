@@ -45,7 +45,31 @@ export default function Listagem() {
                                 </div>
                                 <br/>
                                 <div>
-                                    <p className="textoDoListagem">Lorem ipsum ad mauris nullam augue bibendum torquent tincidunt, curae rutrum nostra quam maecenas phasellus quis tempor, elementum a vel mauris orci eros nulla. accumsan molestie ultricies nullam viverra tristique nec justo dictum elit, quis curabitur gravida cras consequat at suscipit nisl placerat</p>
+                                    <table className="textoDoListagem">
+                                        <thead>
+                                            <tr>
+                                                <th>Id Consulta</th>
+                                                <th>Id Paciente</th>
+                                                <th>Id Medico</th>
+                                                <th>Data Agendamento</th>
+                                                <th>Situação</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {
+                                                consulta.map( (itensConsulta) => {
+                                                    return (
+                                                        <tr key={itensConsulta.IdConsulta}>
+                                                            <td>{itensConsulta.IdPaciente}</td>
+                                                            <td>{itensConsulta.IdMedico}</td>
+                                                            <td>{itensConsulta.DataAgendamento}</td>
+                                                            <td>{itensConsulta.Situacao}</td>
+                                                        </tr>
+                                                    );
+                                                })
+                                            }
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>

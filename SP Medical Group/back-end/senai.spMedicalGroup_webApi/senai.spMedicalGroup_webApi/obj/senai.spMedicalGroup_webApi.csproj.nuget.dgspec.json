@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pedro\\OneDrive\\Área de Trabalho\\Banco de Dados\\senai_sprint2_backend\\SP Medical Group\\back-end\\senai.spMedicalGroup_webApi\\senai.spMedicalGroup_webApi\\senai.spMedicalGroup_webApi.csproj": {}
+    "C:\\Users\\pedro\\OneDrive\\Área de Trabalho\\Banco de Dados\\senai_sprint4_front-end\\SP Medical Group\\back-end\\senai.spMedicalGroup_webApi\\senai.spMedicalGroup_webApi\\senai.spMedicalGroup_webApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pedro\\OneDrive\\Área de Trabalho\\Banco de Dados\\senai_sprint2_backend\\SP Medical Group\\back-end\\senai.spMedicalGroup_webApi\\senai.spMedicalGroup_webApi\\senai.spMedicalGroup_webApi.csproj": {
+    "C:\\Users\\pedro\\OneDrive\\Área de Trabalho\\Banco de Dados\\senai_sprint4_front-end\\SP Medical Group\\back-end\\senai.spMedicalGroup_webApi\\senai.spMedicalGroup_webApi\\senai.spMedicalGroup_webApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedro\\OneDrive\\Área de Trabalho\\Banco de Dados\\senai_sprint2_backend\\SP Medical Group\\back-end\\senai.spMedicalGroup_webApi\\senai.spMedicalGroup_webApi\\senai.spMedicalGroup_webApi.csproj",
+        "projectUniqueName": "C:\\Users\\pedro\\OneDrive\\Área de Trabalho\\Banco de Dados\\senai_sprint4_front-end\\SP Medical Group\\back-end\\senai.spMedicalGroup_webApi\\senai.spMedicalGroup_webApi\\senai.spMedicalGroup_webApi.csproj",
         "projectName": "senai.spMedicalGroup_webApi",
-        "projectPath": "C:\\Users\\pedro\\OneDrive\\Área de Trabalho\\Banco de Dados\\senai_sprint2_backend\\SP Medical Group\\back-end\\senai.spMedicalGroup_webApi\\senai.spMedicalGroup_webApi\\senai.spMedicalGroup_webApi.csproj",
+        "projectPath": "C:\\Users\\pedro\\OneDrive\\Área de Trabalho\\Banco de Dados\\senai_sprint4_front-end\\SP Medical Group\\back-end\\senai.spMedicalGroup_webApi\\senai.spMedicalGroup_webApi\\senai.spMedicalGroup_webApi.csproj",
         "packagesPath": "C:\\Users\\pedro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedro\\OneDrive\\Área de Trabalho\\Banco de Dados\\senai_sprint2_backend\\SP Medical Group\\back-end\\senai.spMedicalGroup_webApi\\senai.spMedicalGroup_webApi\\obj\\",
+        "outputPath": "C:\\Users\\pedro\\OneDrive\\Área de Trabalho\\Banco de Dados\\senai_sprint4_front-end\\SP Medical Group\\back-end\\senai.spMedicalGroup_webApi\\senai.spMedicalGroup_webApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pedro\\AppData\\Roaming\\NuGet\\NuGet.Config",
