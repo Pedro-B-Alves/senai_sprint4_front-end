@@ -1,40 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="styles.css" /> 
-        <title>Doguitos</title> 
-    </head>
-    <body>
-        <h1>SITE DE DOGUINHOS</h1>
-        <div id="dog1">
-            <img class="imagem1" src="Ibageins/2.jpeg" alt="Sammy"/> 
-            <h2>Sammy</h2>
-        </div>
-        <div id="dog2">
-            <img class="imagem2" src="Ibageins/3.jpeg" alt="Dragão"/> 
-            <h2>Dragão</h2>
-        </div>
-        <div id="dog3">
-            <img class="imagem3" src="Ibageins/4.jpeg" alt="Milton"/> 
-            <h2>Milton</h2>
-        </div>
-        <div id="dog4">
-            <img class="imagem4" src="Ibageins/5.jpeg" alt="Penny"/> 
-            <h2>Penny</h2>
-        </div>
-        <div id="dog5">
-            <img class="imagem5" src="Ibageins/6.jpeg" alt="Nenem"/> 
-            <h2>Nenem</h2>
-        </div>
-        <div id="botauns">
-            <input id="btn" type="button" value="Nome dos Spitz" onclick="soSpitz()"/> <!--Filter  -->
-            <input id="btn" type="button" value="Idade Real" onclick="idadeReal()"/> <!-- Map -->
-            <input id="btn" type="button" value="Soma todas as Idades" onclick="idadeSoma()"/> <!-- Reduce -->
-            <input id="btn" type="button" value="Piorar Site" onclick="mudaTudo()"/>
-        </div>
 
-        <script> 
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Doguitos</title>
+</head>
+
+<body>
+    <h1>SITE DE DOGUINHOS</h1>
+    <div id="dog1">
+        <img class="imagem1" src="img/2.jpeg" alt="Sammy" />
+        <h2>Sammy</h2>
+    </div>
+    <div id="dog2">
+        <img class="imagem2" src="img/3.jpeg" alt="Dragão" />
+        <h2>Dragão</h2>
+    </div>
+    <div id="dog3">
+        <img class="imagem3" src="img/4.jpeg" alt="Milton" />
+        <h2>Milton</h2>
+    </div>
+    <div id="dog4">
+        <img class="imagem4" src="img/5.jpeg" alt="Penny" />
+        <h2>Penny</h2>
+    </div>
+    <div id="dog5">
+        <img class="imagem5" src="img/6.jpeg" alt="Nenem" />
+        <h2>Nenem</h2>
+    </div>
+    <div id="botauns">
+        <input id="btn" type="button" value="Nome dos Spitz" onclick="mostraNomeSpitz()" />
+        <!--Filter  -->
+        <input id="btn" type="button" value="Idade real" onclick="mostraIdadeReal()" /> <!-- Map -->
+        <input id="btn" type="button" value="Soma de todas as idades" onclick="mostraIdadesSomadas()" /> <!-- Reduce -->
+        <input id="btn" type="button" value="Piorar Site" onclick="pioraSite()" />
+    </div>
+
+
+
+    <script>
         dogs = [
             {
                 nome: 'Sammy',
@@ -61,9 +66,65 @@
                 idade: 4,
                 raca: 'Spitz Alemão'
             },
-            ];
+        ];
 
-            //solta seus script brabos aqui
-        </script> 
-    </body>
+        // Exibe um alert os nomes dos doguinhos Spitz Alemão
+        function mostraNomeSpitz() {
+            const dogsFiltrados = dogs
+                .filter(d => d.raca === 'Spitz Alemão')
+                .map((d) => { alert(d.nome) });
+        };
+
+        // Exibe um alerta com o nome e a idade dos doguinhos equivalente a idade de um ser humano
+        // Referência para a idade dos doguinhos em relação a humana: https://saude.abril.com.br/blog/pet-saudavel/estudo-traca-relacao-mais-precisa-entre-a-idade-dos-caes-e-a-dos-humanos/#:~:text=2%20anos%20do%20c%C3%A3o%20equivaleriam,a%2065%20anos%20dos%20homens.
+        function mostraIdadeReal() {
+            // Pega todas as propriedades menos a raca
+            // const nomesIdades = dogs.map(({raca, ...rest}) => rest);
+
+            // Exibe os dados no formato JSON
+            // nomesIdades.forEach(d => alert(JSON.stringify(d, null, 4)))
+
+            // Pega apenas as propriedades nome e idade
+            const nomesIdades = dogs.map(({ nome, idade }) => ({ nome, idade }));
+
+            // Exibe um alert com os nomes e as idades
+            nomesIdades.forEach(d => {
+
+                switch (d.idade) {
+                    case 4:
+                        d.idade = 52
+                        break;
+                    case 5:
+                        d.idade = 55
+                        break;
+                    case 6:
+                        d.idade = 58
+                        break;
+                    case 8:
+                        d.idade = 63
+                        break;
+                    default:
+                        break;
+                };
+
+                alert(`\n Nome: ${d.nome} \n Idade: ${d.idade}`);
+            });
+        };
+
+        // Exibe um alert com a soma das idades dos doguinhos
+        function mostraIdadesSomadas() {
+            const somaIdades = dogs.reduce((accumulator, currentValue) => accumulator + currentValue.idade, 0);
+
+            alert(`\n A idade dos doguinhos somadas é: \n ${somaIdades}`);
+        };
+
+        function pioraSite() {
+            const body = document.querySelector('body')
+
+            body.style.backgroundImage = 'url(img/ruim.gif)'
+            body.style.display = 'flex'
+        }
+    </script>
+</body>
+
 </html>
