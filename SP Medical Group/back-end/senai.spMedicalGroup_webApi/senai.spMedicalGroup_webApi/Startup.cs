@@ -120,6 +120,9 @@ namespace senai.spMedicalGroup_webApi
             // Habilita a autorização
             app.UseAuthorization();
 
+            // Define o uso de CORS
+            app.UseCors("CorsPolicy");
+
             app.UseEndpoints(endpoints =>
             {
                 // Define o mapeamento dos Controllers

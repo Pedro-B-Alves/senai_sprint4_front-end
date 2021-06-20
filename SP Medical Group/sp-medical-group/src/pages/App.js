@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import "../assets/CSS/Login.css";
 import { parseJwt, usuarioAutenticado } from "../services/auth";
 import logo from "../assets/Imagens/Logo.png"
@@ -14,6 +14,8 @@ export default function App() {
   const [ erroMensagem, setErroMensagem ] = useState( '' );
   const [ isLoading, setIsLoading ] = useState( false );
 
+  let history = useHistory();
+
   // Função que faz a chamada para a API para realizar o login
     const efetuaLogin = (event) => {
         // Ignora o comportamento padrão do navegador (recarregar a página, por exemplo)
@@ -24,7 +26,7 @@ export default function App() {
         setIsLoading(true)
 
         // Define a URL e o corpo da requisição
-        axios.post('http://localhost:5000/api/Login', {
+        axios.post('http://localhost:5000/api/login', {
             email : email,
             senha : senha})
 
@@ -54,33 +56,33 @@ export default function App() {
                 // Verifica se o tipo de usuário logado é Administrador
                 // Se for, redireciona para a página de Tipos Eventos
                 if (parseJwt().role === '1') {
-                    this.props.history.push('/cadastrar');
+                    history.push('/cadastro');
                     console.log('estou logado: ' + usuarioAutenticado());
                 }
 
                 else if(parseJwt().role === '2'){
-                  this.props.history.push('/listagem');
+                  history.push('/listagem');
                   console.log('estou logado: ' + usuarioAutenticado());
                 }
 
                 else if(parseJwt().role === '3'){
-                  this.props.history.push('/Listagem');
+                  history.push('/Listagem');
                   console.log('estou logado: ' + usuarioAutenticado());
                 }
 
                 // Se não for, redireciona para a página home
                 else {
-                    this.props.history.push('/')
+                    history.push('/')
                 }
             }
         })
 
         // Caso haja um erro,
-        .catch(() => {
-            // define o state erroMensagem com uma mensagem personalizada e que a requisição terminou
-            setErroMensagem('E-mail ou senha inválidos! Tente novamente.') 
-            setIsLoading(false)
-        })
+        // .catch(() => {
+        //     // define o state erroMensagem com uma mensagem personalizada e que a requisição terminou
+        //     setErroMensagem('E-mail ou senha inválidos! Tente novamente.') 
+        //     setIsLoading(false)
+        // })
     }
 
     // Função genérica que atualiza o state de acordo com o input
@@ -126,14 +128,15 @@ export default function App() {
                     <input className="inputLogin" type="password" id="login__password" name="senha" value={senha} onChange={atualizaStateCampoSenha}/>
                   </div>
                   <p style={{ color : 'red', textAlign : 'center'}}>{erroMensagem}</p>
+                  <br/>                  
                   {
                     // Caso seja true, renderiza o botão desabilitado com o texto 'Loading...'
                     isLoading === true &&
                     <div className="item">
-                      <button className="btn btn__login" id="btn__login" type="submit" disabled>Loading...</button>
+                      <button className="botao" id="btn__login" type="submit" disabled>Loading...</button>
                     </div>
                   }
-                  <br/>
+
                   {
                   isLoading === false &&
                   <div>
