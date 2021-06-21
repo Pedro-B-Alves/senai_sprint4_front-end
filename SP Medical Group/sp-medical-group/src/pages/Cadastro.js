@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import logo from "../assets/Imagens/Logo.png"
 import logoTexto from "../assets/Imagens/logoTexto.png"
+import { sair } from "../services/auth"
 
 export default function Cadastro() {
 
@@ -48,7 +49,7 @@ export default function Cadastro() {
                                 <Link className="edicaoLink" to="/listagem">Listagem</Link>
                             </div>
                             <div>
-                                <Link className="edicaoLink" to="/">Sair</Link>
+                                <Link className="edicaoLink" onClick={() => sair()} to="/">Sair</Link>
                             </div>
                         </div>
                     </div>

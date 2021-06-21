@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import logo from "../assets/Imagens/Logo.png"
 import logoTexto from "../assets/Imagens/logoTexto.png"
-import { linkPermissao, parseJwt } from "../services/auth";
+import { linkPermissao, parseJwt, sair } from "../services/auth";
 
 export default function Listagem() {
 
@@ -53,7 +53,7 @@ export default function Listagem() {
                                 <Link className="edicaoLink" to={linkPermissao}>{textoLink}</Link>
                             </div>
                             <div>
-                                <Link className="edicaoLink" to="/">Sair</Link>
+                                <Link className="edicaoLink" onClick={() => sair()} to="/">Sair</Link>
                             </div>
                             
                         </div>

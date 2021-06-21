@@ -1,3 +1,5 @@
+
+
 // Define a constante usuarioAutenticado para verificar se o usuário está logado
 export const usuarioAutenticado = () => localStorage.getItem('usuario-login') !== null;
 
@@ -19,4 +21,8 @@ export const linkPermissao = () => {
     else{
         return "/descricao";
     }
+}
+
+export const sair = () => {
+    localStorage.removeItem('usuario-login');
 }
