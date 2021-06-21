@@ -10,3 +10,13 @@ export const parseJwt = () => {
     // e converte a string para JSON
     return JSON.parse(window.atob(base64));
 }
+
+export const linkPermissao = () => {
+    if (parseJwt().role === '1') {
+        return "/cadastro";
+    }
+
+    else{
+        return "/descricao";
+    }
+}

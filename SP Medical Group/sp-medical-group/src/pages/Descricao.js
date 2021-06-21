@@ -63,9 +63,19 @@ export default function Descricao() {
         <div>
             <div>
                 <section>
-                    <div className="parteSuperior">
-                        <Link to="/"><img class="imgLogo" src={logo} alt="Logo SP Medical Group"/></Link>
-                        <Link to="/"><img class="imgTexto" src={logoTexto} alt="SP Medical Group"/></Link>
+                    <div className="parteSuperiorDescricao">
+                        <div className="parteSuperiorEsquerda">
+                            <Link to="/"><img class="imgLogo" src={logo} alt="Logo SP Medical Group"/></Link>
+                            <Link to="/"><img class="imgTexto" src={logoTexto} alt="SP Medical Group"/></Link>
+                        </div>
+                        <div className="parteSuperiorDireita">
+                            <div>
+                                <Link className="edicaoLink" to="/listagem">Listagem</Link>
+                            </div>
+                            <div>
+                                <Link className="edicaoLink" to="/">Sair</Link>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </div>

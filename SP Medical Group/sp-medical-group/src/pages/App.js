@@ -53,21 +53,11 @@ export default function App() {
                 // Exibe no console apenas o tipo de usuário logado
                 console.log(parseJwt().role);
 
-                // Verifica se o tipo de usuário logado é Administrador
+                // Verifica se o tipo de usuário logado é Administrador ou Médico ou Paciente
                 // Se for, redireciona para a página de Tipos Eventos
-                if (parseJwt().role === '1') {
-                    history.push('/cadastro');
+                if (parseJwt().role === '1' || parseJwt().role === '2' || parseJwt().role === '3') {
+                    history.push('/listagem');
                     console.log('estou logado: ' + usuarioAutenticado());
-                }
-
-                else if(parseJwt().role === '2'){
-                  history.push('/listagem');
-                  console.log('estou logado: ' + usuarioAutenticado());
-                }
-
-                else if(parseJwt().role === '3'){
-                  history.push('/Listagem');
-                  console.log('estou logado: ' + usuarioAutenticado());
                 }
 
                 // Se não for, redireciona para a página home
@@ -78,11 +68,11 @@ export default function App() {
         })
 
         // Caso haja um erro,
-        // .catch(() => {
-        //     // define o state erroMensagem com uma mensagem personalizada e que a requisição terminou
-        //     setErroMensagem('E-mail ou senha inválidos! Tente novamente.') 
-        //     setIsLoading(false)
-        // })
+        .catch(() => {
+            // define o state erroMensagem com uma mensagem personalizada e que a requisição terminou
+            setErroMensagem('E-mail ou senha inválidos! Tente novamente.') 
+            setIsLoading(false)
+        })
     }
 
     // Função genérica que atualiza o state de acordo com o input

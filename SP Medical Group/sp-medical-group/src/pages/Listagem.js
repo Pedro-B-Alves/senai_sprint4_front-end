@@ -4,10 +4,12 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import logo from "../assets/Imagens/Logo.png"
 import logoTexto from "../assets/Imagens/logoTexto.png"
+import { linkPermissao, parseJwt } from "../services/auth";
 
 export default function Listagem() {
 
     const [ consulta, setConsulta ] = useState( [] );
+    const [ textoLink, setTextoLink ] = useState( '' );
 
     function buscarConsulta(){
         // Faz a chamada para a API usando axios
@@ -23,15 +25,38 @@ export default function Listagem() {
         .catch(erro => console.log(erro));
     };
 
+    const textoPermissao = () => {
+        if (parseJwt().role === '1') {
+            setTextoLink('Cadastro');
+        }
+    
+        else if(parseJwt().role === '3'){
+          setTextoLink('Descrição');
+        }
+    }
+
     useEffect( buscarConsulta, [] );
+    useEffect( linkPermissao, []);
+    useEffect( textoPermissao, []);
 
     return (
         <div>
             <div>
                 <section>
-                    <div className="parteSuperior">
-                        <Link to="/"><img class="imgLogo" src={logo} alt="Logo SP Medical Group"/></Link>
-                        <Link to="/"><img class="imgTexto" src={logoTexto} alt="SP Medical Group"/></Link>
+                    <div className="parteSuperiorListagem">
+                        <div className="ajuste">
+                            <Link to="/"><img class="imgLogo" src={logo} alt="Logo SP Medical Group"/></Link>
+                            <Link to="/"><img class="imgTexto" src={logoTexto} alt="SP Medical Group"/></Link>
+                        </div>
+                        <div className="parteSuperiorDireita">
+                            <div>
+                                <Link className="edicaoLink" to={linkPermissao}>{textoLink}</Link>
+                            </div>
+                            <div>
+                                <Link className="edicaoLink" to="/">Sair</Link>
+                            </div>
+                            
+                        </div>
                     </div>
                 </section>
             </div>
